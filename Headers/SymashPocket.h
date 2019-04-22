@@ -49,3 +49,21 @@
 #define SYMASH_ENCSTR(_Init) _Init
 
 #endif
+
+// ---------------------- deprecated ----------------------
+
+#define SYMASH_POD_DEPENDENCY(_POD)
+
+#define SYMASH_SELECTOR(POD, SEL) @selector(SEL)
+#define SYMASH_SELECTOR2(POD, SEL, BIND) SYMASH_SELECTOR(POD, SEL)
+
+#define SYMASH_NSSTRING(POD, TAG, STR) (@"" STR @"")
+#define SYMASH_NSSTRING2(POD, TAG, STR, BIND) SYMASH_NSSTRING(POD, TAG, STR)
+
+#define SYMASH_CSTRING(POD, TAG, STR) ("" STR "")
+#define SYMASH_CSTRING2(POD, TAG, STR, BIND) SYMASH_CSTRING(POD, TAG, STR)
+
+#define SYMASH_OCRT(POD, EXPR) EXPR
+#define SYMASH_OCRT2(POD, EXPR, BIND) SYMASH_OCRT(POD, EXPR)
+
+// ---------------------- deprecated ----------------------
