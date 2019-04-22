@@ -9,9 +9,9 @@
 #if __has_include(<SymashSupport/SymashSupport.h>)
 #import <SymashSupport/SymashSupport.h>
 
-#ifndef __SYMASH__
+#if !defined(__SYMASH__) && defined(SYMASH_FX)
 
-#undef SYMASH_FX
+#undef  SYMASH_FX
 #define SYMASH_FX(_Fn, _E, ...) _E
 
 #endif
@@ -23,7 +23,8 @@
 #endif
 
 #define SYMASH_READONLY_DECL
-#define SYMASH_EXPORT_IOS
+
+#define SYMASH_MIRROR_BRIDGE
 
 #define SYMASH_PROPERTY_MAPPER(_sel)
 
@@ -46,23 +47,5 @@
 
 #define SYMASH_GLOBAL_ENCSTR(_Id, _Init) NSString *const _Id = _Init;
 #define SYMASH_ENCSTR(_Init) _Init
-
-// ---------------------- deprecated ----------------------
-
-#define SYMASH_POD_DEPENDENCY(_POD)
-
-#define SYMASH_SELECTOR(POD, SEL) @selector(SEL)
-#define SYMASH_SELECTOR2(POD, SEL, BIND) SYMASH_SELECTOR(POD, SEL)
-
-#define SYMASH_NSSTRING(POD, TAG, STR) (@"" STR @"")
-#define SYMASH_NSSTRING2(POD, TAG, STR, BIND) SYMASH_NSSTRING(POD, TAG, STR)
-
-#define SYMASH_CSTRING(POD, TAG, STR) ("" STR "")
-#define SYMASH_CSTRING2(POD, TAG, STR, BIND) SYMASH_CSTRING(POD, TAG, STR)
-
-#define SYMASH_OCRT(POD, EXPR) EXPR
-#define SYMASH_OCRT2(POD, EXPR, BIND) SYMASH_OCRT(POD, EXPR)
-
-// ---------------------- deprecated ----------------------
 
 #endif
