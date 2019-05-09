@@ -6,21 +6,19 @@
 //  Copyright © 2018 uaex. All rights reserved.
 //
 
-#if __has_include(<SymashSupport/SymashSupport.h>)
+#ifdef __SYMASH__
+
+#if !__has_include(<SymashSupport/SymashSupport.h>)
+#error "please install SymashSupport.framework!"
+#else
 #import <SymashSupport/SymashSupport.h>
-
-#if !defined(__SYMASH__) && defined(SYMASH_FX)
-
-#undef  SYMASH_FX
-#define SYMASH_FX(_Fn, _E, ...) _E
-
 #endif
+
+typedef long   __SYMASH_PCH_CHECKER;
 
 #else
 
-#ifdef __SYMASH__
-#error "please install SymashSupport.framework!"
-#endif
+typedef double __SYMASH_PCH_CHECKER;
 
 #define SYMASH_READONLY_DECL
 
