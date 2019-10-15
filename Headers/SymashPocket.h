@@ -6,7 +6,7 @@
 //  Copyright © 2018 uaex. All rights reserved.
 //
 
-#ifdef __SYMASH__
+#if defined(__SYMASH__) || defined(__SYMASH_XCODE__)
 
 #if !__has_include(<SymashSupport/SymashSupport.h>)
 #error "please install SymashSupport.framework!"
